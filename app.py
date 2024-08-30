@@ -16,10 +16,14 @@ def process_file(uploaded_file):
     return df
 
 # Title of the app
-st.title("CSV Text Processor")
+st.title("Data Augmentation")
+
+# Add a title to the sidebar
+st.sidebar.title("Upload CSV file:")
 
 # File uploader
-uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload a CSV file", type='csv')
+#uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 
 if uploaded_file is not None:
     # Process the uploaded file
