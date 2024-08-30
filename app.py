@@ -19,7 +19,7 @@ def process_file(uploaded_file):
 st.title("Data Augmentation")
 
 # Add a title to the sidebar
-st.sidebar.title("Upload CSV file:")
+st.sidebar.title("Input File Uploader")
 
 # File uploader
 uploaded_file = st.sidebar.file_uploader("Upload a CSV file", type='csv')
