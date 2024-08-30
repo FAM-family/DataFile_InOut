@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
+pd.set_option('display.max_colwidth', None)
 
 # Function to process the CSV file
 def process_file(uploaded_file):
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, encoding='latin-1', delimiter='\t', header=None)
 
     # Rename the column to 'text'
     original_column_name = df.columns[0]  # Assuming the first column is the text column
