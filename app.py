@@ -4,7 +4,7 @@ pd.set_option('display.max_colwidth', None)
 
 # Function to process the CSV file
 def process_file(uploaded_file):
-    df = pd.read_csv(uploaded_file, encoding='latin-1', delimiter='\t', header=None)
+    df = pd.read_csv(uploaded_file, encoding='latin-1', delimiter='\t')
 
     # Rename the column to 'text'
     original_column_name = df.columns[0]  # Assuming the first column is the text column
@@ -24,6 +24,10 @@ uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 if uploaded_file is not None:
     # Process the uploaded file
     processed_df = process_file(uploaded_file)
+
+    # Display the dimension of the dataframe
+    st.write("DataFrame Dimensions:")
+    st.write(f"Rows: {data.shape[0]}, Columns: {data.shape[1]}")
 
     # Display the processed dataframe
     st.write("Processed Data:")
