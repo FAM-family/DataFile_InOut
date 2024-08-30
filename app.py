@@ -26,12 +26,16 @@ if uploaded_file is not None:
     processed_df = process_file(uploaded_file)
 
     # Display the dimension of the dataframe
-    st.write("DataFrame Dimensions:")
-    st.write(f"Rows: {data.shape[0]}, Columns: {data.shape[1]}")
+    #st.write("Input Data Dimensions:")
+    #st.write(f"Rows: {df.shape[0]}, Columns: {df.shape[1]}")
 
     # Display the processed dataframe
     st.write("Processed Data:")
     st.dataframe(processed_df)
+
+    # Display the dimension of the dataframe
+    st.write("Processed Data Dimensions:")
+    st.write(f"Rows: {processed_df.shape[0]}, Columns: {processed_df.shape[1]}")
 
     # Create a download button
     csv = processed_df.to_csv(index=False)
