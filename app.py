@@ -30,8 +30,8 @@ if uploaded_file is not None:
     #st.write(f"Rows: {df.shape[0]}, Columns: {df.shape[1]}")
 
     # Display the processed dataframe
-    st.write("Processed Data:")
-    st.dataframe(processed_df)
+    st.write("Processed Data Extract:")
+    st.dataframe(processed_df.head())
 
     # Display the dimension of the dataframe
     st.write("Processed Data Dimensions:")
